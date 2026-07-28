@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brightside Collective | Human Design Chart Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <img
+                src="assets/images/Hlogo.png"
+                alt="Brightside Collective"
+                class="logo">
+
+            <!-- <span class="eyebrow">
+                BRIGHTSIDE COLLECTIVE
+            </span> -->
+
+            <h1>
+                Discover Your Human Design Blueprint
+            </h1>
+
+            <p>
+                Gain deeper insight into your unique energetic blueprint and explore how you're naturally designed to make decisions, work with your energy, and move through life with greater clarity.
+            </p>
+
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <!-- ========================= -->
+        <!-- FORM -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <h2>Generate Your Human Design Chart</h2>
+
+            <p class="section-description">
+
+                Enter your birth information below to generate your personalized Human Design chart.
+
+                <br><br>
+
+                <strong>
+                    Please ensure your birth time is as accurate as possible for the most reliable results.
+                </strong>
+
+            </p>
+
+            <form id="chartForm">
+
+                <div class="input-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="John Doe"
+                        required>
+
+                </div>
+
+                <div class="grid-2">
+
+                    <div class="input-group">
+
+                        <label for="birthDate">
+                            Birth Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="birthDate"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="birthTime">
+                            Birth Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="birthTime"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="birthLocation">
+                        Birth Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="birthLocation"
+                        placeholder="City, Country"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    Generate My Chart
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- LOADING -->
+        <!-- ========================= -->
+
+        <section
+            id="loadingSection"
+            class="loading hidden">
+
+            <div class="spinner"></div>
+
+            <h2>
+                Calculating Your Human Design...
+            </h2>
+
+            <p>
+
+                We're preparing your personalized Human Design chart.
+
+                <br>
+
+                This usually takes just a few moments.
+
+            </p>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- REPORT -->
+        <!-- PART 2 STARTS HERE -->
+        <!-- ========================= -->
+         <section id="reportSection" class="report hidden">
+
+    <div class="report-header">
+
+        <span class="eyebrow">
+            YOUR PERSONALIZED REPORT
+        </span>
+
+        <h2>
+            Your Human Design Blueprint
+        </h2>
+
+        <p>
+            Your Human Design chart has been created based on the birth information you provided.
+            Think of this as your energetic blueprint—a guide that helps you better understand
+            how you're naturally designed to make decisions, interact with others, and move
+            through life with greater confidence and alignment.
+        </p>
+
+    </div>
+
+    <div class="bodygraph">
+
+        <img
+            src="assets/images/bg-placeholder.svg"
+            alt="Human Design BodyGraph">
+
+    </div>
+
+    <div class="report-grid">
+
+        <div class="info-card">
+            <span>Name</span>
+            <strong id="resultName">John Doe</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Type</span>
+            <strong>Generator</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Strategy</span>
+            <strong>To Respond</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Authority</span>
+            <strong>Emotional</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Definition</span>
+            <strong>Single Definition</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Profile</span>
+            <strong>4/6</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Incarnation Cross</span>
+            <strong>Right Angle Cross of Service</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Signature</span>
+            <strong>Satisfaction</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Not-Self Theme</span>
+            <strong>Frustration</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Digestion</span>
+            <strong>Hot Thirst</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Sense</span>
+            <strong>Inner Vision</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Design Sense</span>
+            <strong>Touch</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Motivation</span>
+            <strong>Hope</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Perspective</span>
+            <strong>Power</strong>
+        </div>
+
+        <div class="info-card">
+            <span>Environment</span>
+            <strong>Markets</strong>
+        </div>
+
+    </div>
+
+    <section class="content-section">
+
+        <h2>
+            Understanding Your Human Design
+        </h2>
+
+        <p>
+
+            Human Design combines several wisdom traditions into one practical system for
+            understanding how you naturally operate.
+
+        </p>
+
+        <p>
+
+            Rather than asking you to become someone else, Human Design encourages you to
+            understand your own unique design so you can make decisions with greater confidence,
+            improve your relationships, and experience more ease in everyday life.
+
+        </p>
+
+    </section>
+
+    <section class="content-section">
+
+        <h2>
+            Your Energy Type
+        </h2>
+
+        <p>
+
+            Your Type represents the way your energy naturally interacts with the world.
+            It influences how opportunities come to you, where your energy flows best,
+            and how you create fulfillment in your daily life.
+
+        </p>
+
+        <p>
+
+            Living in alignment with your Type can help you reduce resistance,
+            make more authentic decisions, and experience greater satisfaction.
+
+        </p>
+
+    </section>
+
+    <section class="content-section">
+
+        <h2>
+            Your Strategy & Authority
+        </h2>
+
+        <p>
+
+            Strategy and Authority work together as your personal decision-making system.
+
+        </p>
+
+        <p>
+
+            Instead of relying only on logic or outside opinions, Human Design encourages
+            you to trust your own inner guidance. Learning this process can make decisions
+            feel clearer, calmer, and more aligned with who you truly are.
+
+        </p>
+
+    </section>
+
+    <section class="content-section">
+
+        <h2>
+            Your Profile
+        </h2>
+
+        <p>
+
+            Your Profile reflects how you naturally learn, experience life, and contribute
+            to the people around you.
+
+        </p>
+
+        <p>
+
+            It offers another layer of understanding that makes your Human Design uniquely yours.
+
+        </p>
+
+    </section>
+
+    <section class="content-section">
+
+        <h2>
+            Beyond the Chart
+        </h2>
+
+        <p>
+
+            While your chart introduces the foundations of your Human Design, there is
+            much more waiting to be explored.
+
+        </p>
+
+        <p>
+
+            Future insights include your defined centers, channels, gates, relationships,
+            career alignment, strengths, growth opportunities, and practical ways to apply
+            your design in everyday life.
+
+        </p>
+
+    </section>
+
+    <section class="content-section callout">
+
+        <h2>
+            Continue Your Journey
+        </h2>
+
+        <p>
+
+            This complimentary chart is just the beginning.
+
+            Take the next step with a personalized Human Design reading tailored specifically
+            to your unique blueprint.
+
+        </p>
+
+        <button class="btn-primary">
+
+            Book Your Personalized Reading
+
+        </button>
+
+    </section>
+
+    <section class="content-section">
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+        <h4>
+            Can my Human Design change?
+        </h4>
+
+        <p>
+
+            No. Your chart is calculated using your birth information and remains constant
+            throughout your lifetime.
+
+        </p>
+
+        <h4>
+            Is Human Design connected to astrology?
+        </h4>
+
+        <p>
+
+            Human Design integrates astrology with several other wisdom traditions,
+            creating a unique framework for self-understanding.
+
+        </p>
+
+        <h4>
+            What's the best place to start?
+        </h4>
+
+        <p>
+
+            Begin by exploring your Type, Strategy, and Authority.
+            These three elements provide a practical foundation for applying Human Design
+            in your everyday life.
+
+        </p>
+
+    </section>
+
+        <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <img
+                src="assets/images/Hlogo.png"
+                alt="Brightside Collective"
+                class="footer-logo">
+
+            <h3>
+                Brightside Collective
+            </h3>
+
+            <p>
+
+                Helping individuals reconnect with their authentic design through
+                meaningful insight, self-discovery, and personal growth.
+
+            </p>
+
+            <div class="footer-divider"></div>
+
+            <p class="footer-small">
+
+                © 2026 Brightside Collective.
+
+                <br>
+
+                Human Design is intended as a tool for self-awareness and personal development.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</section>
+
+</main>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
