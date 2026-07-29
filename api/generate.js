@@ -1,3 +1,9 @@
+import {
+    searchLocation,
+    resolveTimezone,
+    generateBodygraph
+} from "./services/humanDesign.js";
+
 export default async function handler(req, res) {
 
     // Only allow POST requests
@@ -9,6 +15,17 @@ export default async function handler(req, res) {
     }
 
     try {
+
+        console.log("========== ENV DEBUG ==========");
+        console.log("HD_API_KEY:", process.env.HD_API_KEY);
+        console.log("SYSTEME_API_KEY:", process.env.SYSTEME_API_KEY);
+        console.log("SYSTEME_BASE_URL:", process.env.SYSTEME_BASE_URL);
+        console.log("All env keys:", Object.keys(process.env).filter(key =>
+            key.includes("HD") ||
+            key.includes("SYSTEM") ||
+            key.includes("VERCEL")
+        ));
+        console.log("===============================");
 
         const {
             fullName,
@@ -32,45 +49,38 @@ export default async function handler(req, res) {
             });
         }
 
-        /*
-        =====================================================
-        TEMPORARY RESPONSE
+        // Step 1: Find the location
+        const location = await searchLocation(birthLocation);
 
-        Later we'll replace this section with:
+        // Step 2: Resolve timezone
+        const datetime = await resolveTimezone(
+            birthDate,
+            birthTime,
+            location.timezone
+        );
 
-        1. Human Design API
-        2. Systeme.io API
-        3. Database (optional)
+        // Step 3: Generate Human Design chart
+        const bodygraph = await generateBodygraph(datetime);
 
-        =====================================================
-        */
+        // DEBUG: Print the complete API response
+        console.log("========== BODYGRAPH RESPONSE ==========");
+        console.log(JSON.stringify(bodygraph, null, 2));
+        console.log("========================================");
 
         return res.status(200).json({
             success: true,
-
             report: {
-
                 name: fullName,
-
-                type: "Generator",
-
-                strategy: "To Respond",
-
-                authority: "Emotional",
-
-                profile: "4/6",
-
-                definition: "Single Definition",
-
-                incarnationCross:
-                    "Right Angle Cross of Service",
-
-                signature: "Satisfaction",
-
-                notSelfTheme: "Frustration"
-
+                type: bodygraph.type,
+                strategy: bodygraph.strategy,
+                authority: bodygraph.authority,
+                profile: bodygraph.profile,
+                definition: bodygraph.definition,
+                incarnationCross: bodygraph.incarnation_cross,
+                signature: bodygraph.signature,
+                notSelfTheme: bodygraph.not_self_theme,
+                raw: bodygraph
             }
-
         });
 
     }
@@ -80,7 +90,7 @@ export default async function handler(req, res) {
 
         return res.status(500).json({
             success: false,
-            message: "Something went wrong."
+            message: error.message || "Something went wrong."
         });
 
     }

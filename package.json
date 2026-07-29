@@ -4,8 +4,5 @@
   "description": "Brightside Collective Human Design Chart Generator",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "echo \"Run using: npx vercel dev\""
-  },
   "dependencies": {}
 }
