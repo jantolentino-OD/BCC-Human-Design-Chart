@@ -79,6 +79,7 @@ export default async function handler(req, res) {
                 incarnationCross: bodygraph.incarnation_cross,
                 signature: bodygraph.signature,
                 notSelfTheme: bodygraph.not_self_theme,
+                transference: bodygraph.transference?.label,
                 raw: bodygraph
             }
         });

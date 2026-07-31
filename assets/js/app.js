@@ -246,8 +246,7 @@ form.addEventListener("submit", async (e) => {
 
         setText(
             "resultDesignSense",
-            null,
-            "Coming Soon"
+            data.report.transference
         );
 
         // ===========================
